@@ -104,5 +104,9 @@ def main(args):
         "Exporting content",
         extra={"env": args.env, "folders": args.folders, "local_target": args.local_target}
     )
+    print("sending gzr")
+        logger.info(
+        "TEST"
+    )
     sdk = get_client(args.ini, args.env)
     send_export(args.folders, args.local_target, args.env, args.ini, sdk, args.debug)
