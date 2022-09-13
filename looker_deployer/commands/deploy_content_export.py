@@ -26,7 +26,7 @@ logger = deploy_logging.get_logger(__name__)
 
 def export_spaces(folder_id, env, ini, path, debug=False):
     host, port, client_id, client_secret, verify_ssl = get_gzr_creds(ini, env)
-
+print("sending gzr")
     gzr_command = [
         "gzr --api_version 3.1",
         "space",
