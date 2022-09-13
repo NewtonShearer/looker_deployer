@@ -28,7 +28,7 @@ def export_spaces(folder_id, env, ini, path, debug=False):
     host, port, client_id, client_secret, verify_ssl = get_gzr_creds(ini, env)
 
     gzr_command = [
-        "gzr",
+        "gzr --api_version 3.1",
         "space",
         "export",
         folder_id,
@@ -54,7 +54,9 @@ def export_spaces(folder_id, env, ini, path, debug=False):
     if os.name == "nt":
         win_exec = ["cmd.exe", "/c"]
         gzr_command = win_exec + gzr_command
-
+    logger.info(
+        "Reaching the subprocess"
+    )
     subprocess.run(gzr_command)
 
 
